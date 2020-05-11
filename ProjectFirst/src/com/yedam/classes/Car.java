@@ -1,26 +1,28 @@
 package com.yedam.classes;
 
 public class Car {
-	String company = "Çö´ëÀÚµ¿Â÷";
-	String model = "±×·£Àú";
-	String color = "°ËÁ¤";
-	int maxSpeed = 350;
+	String model;
+	int maxSpeed;
 	int speed;
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	Car(){
-		
+		maxSpeed = 100;
 	}
-	Car(String model){
-		this(model,"Àº»ö", 250);
-	}
-	Car(String model, String color){
-		this(model, color, 250);
-	}
-	
-	Car(String model, String color, int maxSpeed){
-		this.model = model;
-		this.color = color;
+	public Car(int maxSpeed) {
 		this.maxSpeed = maxSpeed;
 	}
+	public Car(String model) {
+		this.model = model;
+	}
+	public Car(String model, int maxSpeed) {
+		this.model = model;
+		this.maxSpeed = maxSpeed;
+	}
+	//method
+	void showInfo() {
+		System.out.println("ëª¨ë¸ëª…: "+model+", ìµœê³ ì†ë„: "+maxSpeed);
+
+	}
+	
 }
