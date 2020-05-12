@@ -13,8 +13,7 @@ public class AccountExample {
 			System.out.println("선택> ");
 			int menu = scn.nextInt();
 			scn.nextLine();//엔터값 하나 소비.
-			//Account[] accounts = new Account[100];
-			//Account acc1 = new Account("356-0512","김창현",1000000);
+
 			if (menu == 1) {
 				System.out.println("계좌생성 선택.");
 				System.out.println("계좌번호를 입력하세요.");
@@ -24,6 +23,15 @@ public class AccountExample {
 				System.out.println("예금액을 입력하세요.");
 				int balance = scn.nextInt();
 				Account acnt = new Account(ano, owner, balance);
+				/*accounts[0] = new Account(ano, owner, balance);
+				for(int i=0;i<accounts.length; i++) {
+					if(accounts[i] != null && accounts[i].getAno().equals(acnt.getAno())) {
+						break;
+					}else {
+						accounts[i] = acnt;
+						break;
+					}*/
+
 				for (int i = 0; i < accounts.length; i++) {
 					if (accounts[i] == null) {
 						accounts[i] = acnt;
@@ -34,7 +42,7 @@ public class AccountExample {
 			} else if (menu == 2) {
 				System.out.println("계좌목록 선택.");
 				//전체 배열중에 값이 있는 경우에만 출력(null제외)
-				//System.out.println(accounts[0].getAno());
+
 				for (Account acc : accounts) {
 					if (acc != null) {
 						System.out.println(
@@ -49,8 +57,8 @@ public class AccountExample {
 				System.out.println("예금액 입력하세요.");
 				int balance = scn.nextInt();
 				//전체 배열 중 값이 있는 경우 && 입력 계좌번호와 동일한 건에 대해서만 처리.
-				for(Account acc : accounts) {
-					if(acc!=null && acc.getAno().equals(ano)) {
+				for (Account acc : accounts) {
+					if (acc != null && acc.getAno().equals(ano)) {
 						int result = acc.getBalance();
 						acc.setBalance(result + balance);
 					}
@@ -62,14 +70,14 @@ public class AccountExample {
 				String ano = scn.nextLine();
 				System.out.println("출금액 입력하세요.");
 				int balance = scn.nextInt();
-				for(Account acc : accounts) {
-					if(acc!=null && acc.getAno().equals(ano)) {
+				for (Account acc : accounts) {
+					if (acc != null && acc.getAno().equals(ano)) {
 						int result = acc.getBalance();
 						acc.setBalance(result - balance);
 					}
 				}
 				System.out.println("출금 처리가 되었습니다.");
-				//acc1.setBalance(menu);
+
 			} else if (menu == 5) {
 				System.out.println("종료선택.");
 				break;
