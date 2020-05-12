@@ -13,13 +13,27 @@ public class gugudan {
 			System.out.println(i + "*" + j + "=" + j*i);
 			j++;
 		}*/
-		int j=1;
-		while(j<=9) {
-		for(int i=2;i<=9;i++) {
-			System.out.print(i+"*"+j+"="+j*i+"\t");
+//		int j=1;
+//		while(j<=9) {
+//		for(int i=2;i<=9;i++) {
+//			System.out.print(i+"*"+j+"="+j*i+"\t");
+//		}
+//		System.out.println("");
+//		j++;
+//		}
+		int i = 0 ;
+		int j = 0 ;
+		int dan = 0;
+		for(dan = 2; dan <= 9; dan++) {
+			System.out.print("["+dan +"단]" + "\t");
 		}
-		System.out.println("");
-		j++;
+		System.out.println();
+		for(j = 1; j <=9; j++) {
+			for(i=2; i<=9; i++) {
+				System.out.print(i + "*" + j + "=" + (i*j) +"\t");
+			}
+			System.out.println();
 		}
+		
 	}
 }
